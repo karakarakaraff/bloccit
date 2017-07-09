@@ -1,1 +1,22 @@
+.social-btn {
+  background-color: #a0a0a0;
+  height: 50px;
+  width: auto;
+  padding: 0 50px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
+.social-btn a {
+  color: #fff;
+}
+
+.social-btn:hover {
+  background-color: #7fdbbf;
+}
+
+.social-btn a:hover {
+  color: #fff;
+  text-decoration: none;
+}

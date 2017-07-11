@@ -25,6 +25,9 @@ module Bloccit
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # Make RandomData available to all specs
+    config.autoload_paths << File.join(config.root, "lib")
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end

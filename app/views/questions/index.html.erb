@@ -3,11 +3,7 @@
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
-        <% if question.resolved %>
-        <%= link_to "RESOLVED: #{question.title}", question %>
-        <% else %>
-        <%= link_to question.title, question %>
-        <% end %>
+        <%= index_resolved(question) %>
       </h4>
     </div>
   </div>

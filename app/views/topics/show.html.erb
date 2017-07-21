@@ -21,5 +21,19 @@
         </div>
       </div>
     <% end %>
+    <hr />
+    <%= link_to "New Sponsored Post", new_topic_sponsored_post_path(@topic), class: 'btn btn-success' %>
+    <% @topic.sponsored_posts.each do |sponsored_post| %>
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <%= link_to sponsored_post.title, topic_sponsored_post_path(@topic, sponsored_post) %>
+          </h4>
+          <small>
+            Price: $<%= sponsored_post.price %>
+          </small>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

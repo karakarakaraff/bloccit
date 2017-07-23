@@ -16,3 +16,16 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.user_info {
+  float: right;
+}
+
+.user_info a:hover {
+  text-decoration: none;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}

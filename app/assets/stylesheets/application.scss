@@ -16,3 +16,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Let buttons be next to each other when using Rails button_to
+form.button_to {
+  display: inline !important;
+}

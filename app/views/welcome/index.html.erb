@@ -1,2 +1,22 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<div class="jumbotron">
+  <h1>Bloccit</h1>
+  <p>Bloccit is a resource for sharing links, tips, gossip and gifs with your friends!</p>
+  <p>
+    <%= link_to "Sign up today!", new_user_path, class: 'btn btn-primary' %>
+  </p>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <h2>Brings people together</h2>
+    <p>Bloccit welcomes everyone to the conversation.</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Solves your crisis</h2>
+    <p>Ask questions. Vent your frustrations. Find solidarity and kitten gifs.</p>
+  </div>
+  <div class="col-md-4">
+    <h2>Lets you creep</h2>
+    <p>Omg, is your crazy neighbor posting here? Let's see what they have to say.</p>
+  </div>
+</div>

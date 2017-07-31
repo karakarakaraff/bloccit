@@ -1,0 +1,28 @@
+<% @top_topics = [] %>
+<% most_posts_count = 0 %>
+
+<% Topic.all.each  do |topic| %>
+  <% if topic.posts.count >= most_posts_count %>
+    <% @top_topics.unshift(topic) %>
+    <% most_posts_count = topic.posts.count %>
+  <% end %>
+<% end %>
+
+<% @popular_topics = [] %>
+
+<% 4.times do %>
+  <% @popular_topics << @top_topics.shift %>
+<% end %>
+
+<% @popular_topics.each  do |topic| %>
+  <div class="media">
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to topic.name, topic %>
+      </h4>
+      <small>
+        >> <%= topic.posts.count %> posts
+      </small>
+    </div>
+  </div>
+<% end %>

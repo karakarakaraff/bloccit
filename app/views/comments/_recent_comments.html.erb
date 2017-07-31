@@ -1,0 +1,15 @@
+<% @recent_comments = Comment.order('created_at DESC').limit(2) %>
+<% @recent_comments.each  do |comment| %>
+  <div class="media">
+    <div class="gravatar">
+      <%= image_tag comment.user.avatar_url(42) %>
+    </div>
+    <div class="media-body">
+      <small>
+        >> <%= link_to comment.user.name, user_path(comment.user) %>
+        on <%= link_to comment.post.topic.name, topic_post_url(comment.post.topic, comment.post) %>
+      </small><br>
+      <%= comment.body %>
+    </div>
+  </div>
+<% end %>

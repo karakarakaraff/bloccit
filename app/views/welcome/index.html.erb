@@ -1,6 +1,6 @@
 <div class="jumbotron" style="margin-top: 10px">
   <h1>Bloccit</h1>
-  <p>Bloccit is a resource for sharing links, tips, gossip and gifs with your friends!</p>
+  <p>Bloccit is a hub of tips, fun and randomness to share with your friends!</p>
   <p>
     <%= link_to "Sign in", new_session_path, class: 'btn btn-success' %> or
     <%= link_to "Sign up today!", new_user_path, class: 'btn btn-primary' %>
@@ -9,15 +9,15 @@
 
 <div class="row">
   <div class="col-md-4">
-    <h2>Brings people together</h2>
-    <p>Bloccit welcomes everyone to the conversation.</p>
+    <h2><i class="glyphicon glyphicon-pushpin"></i>&nbsp; Popular Topics</h2>
+    <%= render "topics/popular_topics" %>
   </div>
   <div class="col-md-4">
-    <h2>Solves your crisis</h2>
-    <p>Ask questions. Vent your frustrations. Find solidarity and kitten gifs.</p>
+    <h2><i class="glyphicon glyphicon-send"></i>&nbsp; Top-Rated Posts</h2>
+    <%= render "posts/top_posts" %>
   </div>
   <div class="col-md-4">
-    <h2>Lets you creep</h2>
-    <p>Omg, is your crazy neighbor posting here? Let's see what they have to say.</p>
+    <h2><i class="glyphicon glyphicon-comment"></i>&nbsp; Recent Comments</h2>
+    <%= render "comments/recent_comments" %>
   </div>
 </div>

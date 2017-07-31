@@ -4,12 +4,10 @@
       <%= render partial: 'votes/voting', locals: { post: @post } %>
       <h1>
         <%= @post.title %>
-        <br>
-        <small>
-          submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.user.name, user_path(@post.user) %>
-          <!-- <%= @post.user.name %> -->
-        </small>
       </h1>
+      <p>
+        <small>submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.user.name, user_path(@post.user) %></small>
+      </p>
     </div>
     <p><%= @post.body %></p>
   </div>
@@ -35,11 +33,12 @@
   </div>
 </div>
 
+<hr>
+
 <div class="row">
   <div class="col-md-12">
-    <hr />
     <div>
-      <h3>Comments</h3>
+      <h3><i class="glyphicon glyphicon-comment"></i> Comments</h3>
       <%= render @post.comments %>
     </div>
     <% if current_user %>

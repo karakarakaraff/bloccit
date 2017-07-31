@@ -1,0 +1,31 @@
+<% @top_points = [] %>
+<% most_points_count = 0 %>
+
+<% Post.all.each  do |post| %>
+  <% if post.points >= most_points_count %>
+    <% @top_points.unshift(post) %>
+    <% most_points_count = post.points %>
+  <% end %>
+<% end %>
+
+<% @top_posts = [] %>
+
+<% 3.times do %>
+  <% @top_posts << @top_points.shift %>
+<% end %>
+
+<% @top_posts.each  do |post| %>
+  <div class="media">
+    <div class="gravatar">
+      <%= image_tag post.user.avatar_url(42) %>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to post.title, topic_post_path(post.topic, post) %>
+      </h4>
+      <small>
+        >> <%= post.points %> points | <%= link_to post.topic.name, post.topic %>
+      </small>
+    </div>
+  </div>
+<% end %>

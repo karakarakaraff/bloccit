@@ -1,0 +1,13 @@
+<% @user.favorites.each  do |favorite| %>
+  <div class="media">
+    <div class="gravatar">
+      <%= image_tag favorite.post.user.avatar_url(42) %>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">
+        <%= link_to favorite.post.title, topic_post_path(favorite.post.topic, favorite.post) %>
+      </h4>
+      <small><%= favorite.post.comments.count %> comments / <%= favorite.post.votes.count %> votes</small>
+    </div>
+  </div>
+<% end %>

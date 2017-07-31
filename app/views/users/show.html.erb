@@ -12,7 +12,8 @@
         <h2 class="media-heading"><%= @user.name %></h2>
         <small>
           <%= pluralize(@user.posts.count, 'post') %>,
-          <%= pluralize(@user.comments.count, 'comment') %>
+          <%= pluralize(@user.comments.count, 'comment') %>,
+          <%= pluralize(@user.favorites.count, 'favorite post') %>
         </small>
       </div>
     </div>
@@ -39,19 +40,7 @@
   <div class="col-md-4">
     <h2>Favorites</h2>
     <% if user_has_favorites? %>
-      <% @user.favorites.each  do |favorite| %>
-        <div class="media">
-          <div class="gravatar">
-            <%= image_tag favorite.post.user.avatar_url(42) %>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">
-              <%= link_to favorite.post.title, topic_post_path(favorite.post.topic, favorite.post) %>
-            </h4>
-            <small><%= favorite.post.comments.count %> comments / <%= favorite.post.votes.count %> votes</small>
-          </div>
-        </div>
-      <% end %>
+      <%= render "favorites/favorite_posts" %>
     <% else %>
       <p><%= @user.name %> has not favorited any posts.</p>
     <% end %>

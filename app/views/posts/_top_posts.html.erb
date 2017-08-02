@@ -1,19 +1,4 @@
-<% @top_points = [] %>
-<% most_points_count = 0 %>
-
-<% Post.all.each  do |post| %>
-  <% if post.points >= most_points_count %>
-    <% @top_points.unshift(post) %>
-    <% most_points_count = post.points %>
-  <% end %>
-<% end %>
-
-<% @top_posts = [] %>
-
-<% 3.times do %>
-  <% @top_posts << @top_points.shift %>
-<% end %>
-
+<% @top_posts = Post.reorder('rank DESC').limit(3) %>
 <% @top_posts.each  do |post| %>
   <div class="media">
     <div class="gravatar">
@@ -24,7 +9,7 @@
         <%= link_to post.title, topic_post_path(post.topic, post) %>
       </h4>
       <small>
-        >> <%= post.points %> points | <%= link_to post.topic.name, post.topic %>
+        <%= pluralize(post.points, 'point') %> | <%= time_ago_in_words(post.created_at) %> old | <%= link_to post.topic.name, post.topic %>
       </small>
     </div>
   </div>

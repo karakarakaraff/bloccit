@@ -6,7 +6,7 @@
     </div>
     <div class="media-body">
       <small>
-        >> <%= link_to comment.user.name, user_path(comment.user) %>
+        <%= link_to comment.user.name, user_path(comment.user) %>
         on <%= link_to comment.post.title, topic_post_url(comment.post.topic, comment.post) %>
       </small><br>
       <%= comment.body %>

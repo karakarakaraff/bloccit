@@ -32,7 +32,7 @@
   <div class="col-md-4">
     <h2>Comments</h2>
     <% if user_has_comments? %>
-      <%= render @user.comments %>
+      <%= render @user.comments.reorder('created_at DESC') %>
     <% else %>
       <p><%= @user.name %> has not written any comments.</p>
     <% end %>

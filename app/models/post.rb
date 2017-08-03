@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :topic
+  belongs_to :topic, counter_cache: true
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
@@ -26,8 +26,7 @@ class Post < ApplicationRecord
   end
 
   def update_rank
-    age_in_days = (created_at - Time.new(1970,1,1)) / 1.day.seconds
-    new_rank = points + age_in_days
+    new_rank = points
     update_attribute(:rank, new_rank)
   end
 end

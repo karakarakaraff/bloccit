@@ -59,7 +59,7 @@ RSpec.describe Post, type: :model do
     describe "#update_rank" do
       it "calculates the correct rank" do
         post.update_rank
-        expect(post.rank).to eq (post.points + (post.created_at - Time.new(1970,1,1)) / 1.day.seconds)
+        expect(post.rank).to eq (post.points)
       end
 
       it "updates the rank when an up vote is created" do

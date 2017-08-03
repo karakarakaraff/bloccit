@@ -1,4 +1,3 @@
-<% @top_posts = Post.reorder('rank DESC').limit(3) %>
 <% @top_posts.each  do |post| %>
   <div class="media">
     <div class="gravatar">
@@ -9,7 +8,7 @@
         <%= link_to post.title, topic_post_path(post.topic, post) %>
       </h4>
       <small>
-        <%= pluralize(post.points, 'point') %> | <%= time_ago_in_words(post.created_at) %> old | <%= link_to post.topic.name, post.topic %>
+        <%= pluralize(post.points, 'point') %> | <%= pluralize(post.comments_count, 'comment') %> | <%= link_to post.topic.name, post.topic %>
       </small>
     </div>
   </div>

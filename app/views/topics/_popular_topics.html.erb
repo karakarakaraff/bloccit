@@ -1,4 +1,3 @@
-<% @popular_topics = Topic.reorder('name DESC').limit(2) %>
 <% @popular_topics.each  do |topic| %>
   <div class="media">
     <div class="media-body">

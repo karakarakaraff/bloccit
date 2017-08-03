@@ -1,4 +1,3 @@
-<% @recent_comments = Comment.order('created_at DESC').limit(2) %>
 <% @recent_comments.each  do |comment| %>
   <div class="media">
     <div class="gravatar">

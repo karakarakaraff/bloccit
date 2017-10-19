@@ -1,5 +1,5 @@
 # Bloccit
-Bloccit is a CRUD web application built with Ruby on Rails that allows users to create posts under topics, then comment and vote on those posts, plus save their favorite posts. This project was made for [Bloc's Web Development Program](http://bloc.io).
+Bloccit is a CRUD web application built with Ruby on Rails that allows users to create posts under topics, then comment and vote on those posts, plus save their favorite posts. Read a case study about building this project on my portfolio website at [karaflaherty.com: Bloccit](http://karaflaherty.com/bloccit-a-forum-web-app-with-topics-votes-and-favorites/).
 
 ### Signing up, signing in, signing out
 Everything on Bloccit can be read publicly, but to create posts, vote on posts, write comments and save favorite posts, users must create an account with a name, email and password. Once signed up and signed in, Bloccit uses the Rails object `session` to attribute all actions to the current user while they are signed in. When the user signs out, the `session` object is cleared.
@@ -18,3 +18,6 @@ Users have the option of saving their favorite posts by clicking the "Favorite" 
 
 ### User profiles
 All of a user's activity is saved on their user profile. Each profile holds three lists: posts, comments and favorites. Additionally, an avatar can be linked to the user's registered email via [Gravatar](https://en.gravatar.com/), and it will show up on the user profile as well as in various locations around Bloccit, such as in the navigation bar and next to comments the user has made.
+
+---
+This project was built for [Bloc's Web Development Program](https://www.bloc.io/).
